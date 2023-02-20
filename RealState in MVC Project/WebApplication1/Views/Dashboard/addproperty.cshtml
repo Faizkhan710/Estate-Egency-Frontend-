@@ -1,0 +1,107 @@
+﻿@model WebApplication1.Models.property
+
+@{
+    ViewBag.Title = "addproperty";
+    Layout = "~/Views/Shared/DashboardLayout.cshtml";
+}
+
+<h2>addproperty</h2>
+
+@using (Html.BeginForm("addproperty","Dashboard",FormMethod.Post,new { enctype="multipart/form-data"}))
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>property</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.propertytype, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+              @Html.DropDownListFor(a=>a.propertytype,new SelectList(new [] {"resdendials","commercial" }),"select property", new { @class="form-control"})
+                @Html.ValidationMessageFor(model => model.propertytype, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.location, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(a => a.location,null, new { @class = "form-control",placeholder="enter location" })
+                @Html.ValidationMessageFor(model => model.location, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.area, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(a => a.area, new SelectList(new[] { "80ft yard", "120ft yard", "133ft yard", "240ft yard", "480ft yard", "500ft yard", "800ft yard" }), "select area", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.area, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.category, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(a => a.category, new SelectList(new[] { "apartment", "west open flat", "3 side corner flat","banglow","house","penthouse" }), "select category", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.category, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.selltype, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(a => a.propertytype, new SelectList(new[] { "Sell", "Rent" }), "select selltype", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.selltype, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.demand, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+               @Html.TextBoxFor(a => a.demand, null, new { @class="form-control"})
+                @Html.ValidationMessageFor(model => model.demand, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.lease, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+               @Html.RadioButtonFor(a=>a.lease,"YES")<label>&nbsp; Yes &nbsp;</label>
+                @Html.RadioButtonFor(a => a.lease, "NO")<label>&nbsp; No &nbsp;</label>
+                @Html.ValidationMessageFor(model => model.lease, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.sublease, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+               
+                @Html.ValidationMessageFor(model => model.sublease, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.room, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(a => a.room,null,new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.room, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.propertyimage, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="file" name="imageayi" />
+               
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+

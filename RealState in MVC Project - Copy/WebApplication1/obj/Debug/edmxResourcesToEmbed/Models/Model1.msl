@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RealStateModelStoreContainer" CdmEntityContainer="RealStateEntities">
+    <EntitySetMapping Name="Contact">
+      <EntityTypeMapping TypeName="RealStateModel.Contact">
+        <MappingFragment StoreEntitySet="Contact">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="userTable">
+      <EntityTypeMapping TypeName="RealStateModel.userTable">
+        <MappingFragment StoreEntitySet="userTable">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Cnic" ColumnName="Cnic" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="property">
+      <EntityTypeMapping TypeName="RealStateModel.property">
+        <MappingFragment StoreEntitySet="property">
+          <ScalarProperty Name="propertyimage" ColumnName="propertyimage" />
+          <ScalarProperty Name="room" ColumnName="room" />
+          <ScalarProperty Name="sublease" ColumnName="sublease" />
+          <ScalarProperty Name="lease" ColumnName="lease" />
+          <ScalarProperty Name="demand" ColumnName="demand" />
+          <ScalarProperty Name="selltype" ColumnName="selltype" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="area" ColumnName="area" />
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="propertytype" ColumnName="propertytype" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
